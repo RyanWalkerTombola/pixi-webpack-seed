@@ -8,4 +8,5 @@ npm i
 ```
 npm run serve
 npm run lint
+npm run buid
 ```
