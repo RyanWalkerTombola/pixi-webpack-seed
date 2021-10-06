@@ -5,7 +5,8 @@ const resources = Loader.shared.resources;
 const app = new Application({
     width: window.innerWidth,
     height: window.innerHeight,
-    resolution: window.devicePixelRatio
+    resolution: window.devicePixelRatio,
+    antialias: true
 });
 
 document.body.appendChild(app.view);
