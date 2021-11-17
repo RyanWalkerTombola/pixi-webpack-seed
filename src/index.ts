@@ -3,11 +3,14 @@ import { Application, Loader, Sprite } from 'pixi.js';
 const resources = Loader.shared.resources;
 
 const app = new Application({
-    width: window.innerWidth,
-    height: window.innerHeight,
+    resizeTo: window,
     resolution: window.devicePixelRatio,
+    autoDensity: true,
     antialias: true
 });
+
+app.view.style.position = 'absolute';
+app.view.style.display = 'block';
 
 document.body.appendChild(app.view);
 
