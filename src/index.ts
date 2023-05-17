@@ -18,7 +18,19 @@ Loader.shared
     .add('assets/cat.png')
     .load(setup);
 
+let cat: Sprite;
+
 function setup() {
-    const cat = new Sprite(resources['assets/cat.png'].texture);
+    cat = new Sprite(resources['assets/cat.png'].texture);
     app.stage.addChild(cat);
+    cat.anchor.set(0.5, 0.5);
+
+    app.ticker.add((delta) => update(delta));
+}
+
+function update(delta: number) {
+    app.stage.x = app.view.width / (2 * window.devicePixelRatio);
+    app.stage.y = app.view.height / (2 * window.devicePixelRatio);
+
+    cat.angle += 1 * delta;
 }
